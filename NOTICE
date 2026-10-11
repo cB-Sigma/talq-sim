@@ -1,0 +1,51 @@
+talq-sim (a simulated TALQ 2.x gateway, in Go)
+Copyright 2026 Abhinav Gautam
+
+This module is licensed under the Apache License, Version 2.0 (LICENSE).
+
+The code was written for SigmaM2M, a oneM2M platform, from the public
+TALQ OpenAPI definitions (PROVENANCE.md). It contains no code from other
+projects. sim/sim.go and sim/ext.go come from SigmaM2M and carry no
+per-file copyright header, the convention of the code they come from;
+the copyright line above covers them. Files added for this module carry
+"Copyright 2026 Abhinav Gautam" and "SPDX-License-Identifier:
+Apache-2.0".
+
+Trademarks
+----------
+
+TALQ is a trademark of the TALQ Consortium. This module is not made,
+endorsed, certified or supported by the TALQ Consortium and is not
+affiliated with it; the name is used only to say which protocol it
+simulates.
+
+Specifications
+--------------
+
+TALQ OpenAPI definitions 2.7.1 and specification 2.7.1,
+github.com/TALQ-consortium/TALQ_specification (BSD-3-Clause for the
+OpenAPI files): facts only, through the talq module. No file or text of
+them is included.
+
+Interop tests (interop/, a separate test-only module)
+-----------------------------------------------------
+
+interop reads the three TALQ 2.7.1 OpenAPI files at test time, from a
+checkout or downloaded at a pinned commit with their SHA-256 checked;
+nothing of them is copied into this repository. It uses
+github.com/santhosh-tekuri/jsonschema/v6 (Apache-2.0, Copyright Santhosh
+Kumar Tekuri) and its dependency golang.org/x/text (BSD-3-Clause,
+Copyright The Go Authors).
+
+Dependencies
+------------
+
+- github.com/cB-Sigma/talq (Copyright 2026 Abhinav Gautam, Apache-2.0,
+  standard library only).
+- The Go standard library (BSD-3-Clause, Copyright The Go Authors).
+
+Test data
+---------
+
+Every address, token, device name and asset type in this module is a
+made-up demo value; test certificates are generated at run time.
